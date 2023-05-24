@@ -3,11 +3,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementsByTagName('form')[0];
   const exerciseLog = document.getElementsByClassName('exercise-log')[0];
 
+  const submitButton = document.getElementById('submit');
+
   let exerciseCounter = 0;
 
   //submit event listener
   form.addEventListener('submit', function(event) {
     event.preventDefault(); //prevent form submission
+    event.stopPropagation(); //stop event propagation 
 
     //input values
     const exerciseType = document.getElementById('exercise-type').value;
@@ -50,10 +53,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //reset the form
     form.reset();
+
+    setTimeout(function() {
+      submitButton.textContent = 'Trimite';
+      submitButton.disabled = false;
+    }, 5000);
+
+    submitButton.textContent = 'Formular transmis';
+    submitButton.disabled = true;
+    
   });
 });
 
 //validarea datelor
 function validateExerciseName(exerciseName) {
   const regex = /Workout$/i; //verifică dacă se termină cu "Workout"
+  return regex.test(exerciseName);
 }
