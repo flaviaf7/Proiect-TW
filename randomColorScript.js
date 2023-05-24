@@ -1,14 +1,29 @@
-// eveniment de click + querySelector
 const header = document.querySelector('h2');
-header.addEventListener('click', function() {
+header.addEventListener('click', function(event) {
   const randomColor = generateRandomColor();
-  changeTextColor(header, randomColor);
+  
+  changeRandomLetterColor(event.currentTarget, randomColor);
 });
 
-// schimbare culoare text random
-function changeTextColor(element, color) {
+//schimba culoarea sau mareste litera
+function changeRandomLetterColor(element, color) {
   if (element) {
-    element.style.color = color;
+    const text = element.textContent;
+    
+    const randomIndex = generateRandomNumber(0, text.length - 1);
+    const letter = text.charAt(randomIndex);
+
+    // style ul actual al literei 
+    const computedStyle = window.getComputedStyle(element);
+    const currentColor = computedStyle.color;
+
+    //verifica daca culoarea este diferita de cea curenta
+    if (color !== currentColor) {
+      // Construiește HTML-ul modificat cu culoarea selectată pentru literă
+      const modifiedText = text.substring(0, randomIndex) + `<span style="color: ${color}">${letter}</span>` + text.substring(randomIndex + 1);
+      
+      element.innerHTML = modifiedText;
+    }
   }
 }
 
