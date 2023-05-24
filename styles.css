@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #FBFEF9;
+  background-color: #FBFEF9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.home-container {
+  display: flex;
+  align-items: center;
+}
+
+.text-container {
+  flex: 1;
+}
+
+.home-photo {
+  max-width: 100%;
+  height: auto;
+  margin-left: 20px;
+  border-radius: 4px;
+}
+
+header {
+  background-color: #E6EFE6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: inline-block; 
+  max-height: 40px;
+  margin-right: 10px;
+}
+
+.menu {
+  list-style: none;
+}
+
+.menu li {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.menu li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #03312E;
+}
+
+.menu li a:hover {
+  background-color: #FBFEF9;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FBFEF9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #FBFEF9;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+main {
+  padding: 40px 0;
+}
+
+section {
+  margin-bottom: 40px;
+  background-color: #03312E;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+section h2 {
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FBFEF9;
+}
+
+section p {
+  padding: 0 20px 20px;
+}
+
+form {
+  padding: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #FBFEF9;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #03312E;
+  background-color: #FBFEF9;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#exercise-log {
+  padding: 20px;
+}
+
+footer {
+  background-color: #03312E;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  header {
+    padding: 10px;
+  }
+
+  .menu li a {
+    padding: 5px 10px;
+  }
+
+  section h2 {
+    font-size: 20px;
+  }
+
+  form input,
+  form select,
+  form textarea {
+    margin-bottom: 10px;
+  }
+}

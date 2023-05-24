@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitTomorrow</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="header-container">
+        <img src="./img/logo.png" class="logo" alt="Logo">
+        <ul class="menu">
+          <li><a href="#home">Home</a></li>
+          <li class="dropdown">
+            <a class="dropbtn">Pages</a>
+            <div class="dropdown-content">
+              <a href="#exercise-form">Exercise Form</a>
+              <a href="#progress-tracking">Progress Tracking</a>
+              <a href="#settings">Settings</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <div class="home-container container">
+        <div class="text-container">
+          <h2>Welcome to FitTomorrow!</h2>
+          <p>Track your fitness progress and achieve your goals with ease.</p>
+        </div>
+        <img src="img/home_photo.jpg" class="home-photo" alt="Home Photo">
+      </div>
+    </section>
+
+    <section id="exercise-form">
+      <div class="container">
+        <h2>Exercise Form</h2>
+        <form>
+          <label for="exercise-type">Exercise Type:</label>
+          <input type="text" id="exercise-type" required>
+
+          <label for="duration">Duration (minutes):</label>
+          <input type="number" id="duration" required>
+
+          <label for="intensity">Intensity:</label>
+          <select id="intensity" required>
+            <option value="low">Low</option>
+            <option value="moderate">Moderate</option>
+            <option value="high">High</option>
+          </select>
+
+          <label for="notes">Additional Notes:</label>
+          <textarea id="notes"></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="progress-tracking">
+      <div class="container">
+        <h2>Exercise Log</h2>
+        <div id="exercise-log"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy 2023 FitTomorrow. A university project for Web Dev Lab.</p>
+    </div>
+  </footer>
+</body>
+</html>
