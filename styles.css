@@ -4,20 +4,23 @@
   box-sizing: border-box;
 }
 
+/* selector de element */
 body {
   font-family: Arial, sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.6;
   color: #FBFEF9;
   background-color: #FBFEF9;
 }
 
+/* selector de clasa */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 1.667rem;
 }
 
+/* flex */
 .home-container {
   display: flex;
   align-items: center;
@@ -30,14 +33,15 @@ body {
 .home-photo {
   max-width: 100%;
   height: auto;
-  margin-left: 20px;
+  margin-left: 1.667rem;
   border-radius: 4px;
 }
 
+/* selector de id */
 #text-heading {
-  font-size: 60px;
+  font-size: 3.75rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 header {
@@ -77,8 +81,21 @@ header {
   color: #03312E;
 }
 
+/* pseudo-clasa  */
 .menu li a:hover {
   background-color: #E6EFE6;
+}
+
+/* pseudo-element */
+.menu li a::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: #03312E;
+  margin-right: 5px;
+  border-radius: 50%;
+  vertical-align: middle;
 }
 
 .dropdown {
@@ -89,7 +106,7 @@ header {
   display: none;
   position: absolute;
   background-color: #FBFEF9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
 
@@ -101,6 +118,7 @@ header {
   white-space: nowrap;
 }
 
+/* combinator de selectori */
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -109,10 +127,16 @@ main {
   padding: 40px 0;
 }
 
+/* tranzitie */
 section {
   margin-bottom: 40px;
   background-color: #03312E;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+section:hover {
+  background-color: #024147;
 }
 
 section h2 {
@@ -164,8 +188,12 @@ form button {
   cursor: pointer;
 }
 
-#exercise-log {
+/* grid */
+.exercise-log {
   padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
 }
 
 footer {
@@ -180,25 +208,97 @@ footer p {
 }
 
 @media (max-width: 768px) {
-  .container {
+  .header-container {
     padding: 10px;
   }
 
-  header {
-    padding: 10px;
+  .logo {
+    max-height: 50px;
+    margin-right: 5px;
+  }
+
+  .menu li {
+    font-size: 16px;
   }
 
   .menu li a {
-    padding: 5px 10px;
+    padding: 8px 10px;
+  }
+
+  #text-heading {
+    font-size: 2.5rem;
   }
 
   section h2 {
     font-size: 20px;
   }
 
+  form label {
+    font-size: 16px;
+  }
+
   form input,
   form select,
   form textarea {
-    margin-bottom: 10px;
+    padding: 8px;
+  }
+
+  form button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .home-photo {
+    margin-left: 0;
+    margin-bottom: 20px;
+    height: auto;
+    width: 100%;
   }
 }
+
+.corner-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 30px;
+  margin-right: 5px;
+}
+
+.stickyman {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.gym-dumbbell {
+  position: absolute;
+  top: 22%;
+  left: -45%;
+  transform: translateX(-50%);
+  animation: moveUpDown 2s linear infinite;
+}
+
+.stickyman img {
+  width: 100%;
+  height: auto;
+}
+
+.gym-dumbbell img {
+  width: 50px;
+  height: auto;
+}
+
+/* animatie */
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
