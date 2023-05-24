@@ -5,6 +5,7 @@ header.addEventListener('click', function() {
   changeTextColor(header, randomColor);
 });
 
+// schimbare culoare text random
 function changeTextColor(element, color) {
   if (element) {
     element.style.color = color;

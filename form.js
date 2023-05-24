@@ -54,12 +54,13 @@ document.addEventListener('DOMContentLoaded', function() {
     //reset the form
     form.reset();
 
+    //disable the submit button for 5 seconds
     setTimeout(function() {
-      submitButton.textContent = 'Trimite';
+      submitButton.textContent = 'Submit';
       submitButton.disabled = false;
     }, 5000);
 
-    submitButton.textContent = 'Formular transmis';
+    submitButton.textContent = 'Exercise Logged!';
     submitButton.disabled = true;
     
   });
